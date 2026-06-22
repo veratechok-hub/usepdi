@@ -171,7 +171,7 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 #sec-waitlist .container{position:relative;z-index:2}
 .bookend{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(30px,3.8vw,48px);font-weight:600;color:#fff;line-height:1.08;margin-bottom:8px}
 .bookend em{font-style:normal;color:var(--clay-soft)}
-.waitlist-sub{font-size:17px;color:rgba(255,255,255,.72);margin-bottom:30px}
+.waitlist-sub{font-size:17px;color:rgba(255,255,255,.72);margin:0 auto 30px;max-width:680px;text-wrap:balance}
 .wl-bar{display:flex;gap:0;max-width:640px;margin:0 auto;background:#fff;border-radius:11px;padding:7px;box-shadow:0 18px 46px -24px rgba(0,0,0,.55)}
 .wl-f{border:none;background:transparent;font-family:inherit;font-size:14px;color:var(--ink);padding:13px 15px;outline:none}
 .wl-email{flex:1.5;border-right:1px solid var(--rule)}
@@ -332,7 +332,7 @@ body.modal-open{overflow:hidden}
     <div class="hero-inner">
       <span class="eyebrow hero-eyebrow">For doulas and the payers who cover them</span>
       <h1 class="hero-hl">The care was always real.<br><em>Now it counts.</em></h1>
-      <p class="hero-sub">Say what happened at the visit. Our Maternal Integrity Assistant<br>MIA turns it into a record your state Medicaid plan will accept,<br>in about 90 seconds of talking.</p>
+      <p class="hero-sub">Say what happened at the visit. In about 90 seconds,<br>our <span style="white-space:nowrap">Maternal Integrity Assistant — MIA</span> turns your words<br>into a record your state Medicaid plan will accept.</p>
       <div class="hero-ctas">
         <a href="#sec-signup" data-signup-mode="waitlist" class="btn btn-plum">Join the Waitlist</a>
         <a href="#sec-payers" class="btn btn-ghost">For Payers</a>
@@ -366,7 +366,7 @@ body.modal-open{overflow:hidden}
       </div>
       <div>
         <div class="founder-quote" style="margin-top:0">
-          <div class="founder-quote-text">"Voice is how we truly connect. When a birth worker captures the truth of what happened, those words become a living record, one that honors the care and stands the test of time. Protecting the integrity of the record protects the integrity of life."</div>
+          <div class="founder-quote-text">"...Voice is how we connect. When a birth worker captures the truth of what happened, that truth becomes a record. It honors the care that was given, and it holds up over time. Protect the integrity of the record, and you protect the integrity of a life."</div>
           <div class="founder-quote-attr">Mia, Founder &amp; CEO, Perinatal Documentation Integrity</div>
         </div>
       </div>
@@ -381,17 +381,17 @@ body.modal-open{overflow:hidden}
       <div>
         <span class="eyebrow">Why MIA Exists</span>
         <h2 class="section-hl">The bridge between<br>care and coverage.</h2>
-        <p class="why-body">Up to $<span class="rollnum" data-target="1044">0</span> is set aside to pay a doula for one pregnancy. Most of it is never claimed. Not because the care wasn&rsquo;t given, but because the paperwork falls apart before it reaches a payer. In Oklahoma alone, SoonerCare covers more than <span class="rollnum" data-target="27000">0</span> births a year.</p>
+        <p class="why-body">Up to $<span class="rollnum" data-target="1044">0</span> per pregnancy is set aside to cover doula care. Most of it goes unclaimed. Not because the care didn&rsquo;t happen, but because documentation breaks down before a claim ever reaches the payer. In Oklahoma, SoonerCare funds more than <span class="rollnum" data-target="27000">0</span> births a year. The care is consistent. The paper trail is where it falls apart.</p>
         <div class="why-callout">
           <div class="why-callout-t">Total transparency.</div>
-          <p>Payers want to cover this care, and they do pay for it. What broke over time was the trust between the people giving care and the people paying for it. MIA rebuilds that trust the honest way, with clean, verifiable records on every visit.</p>
+          <p>Payers already fund this care, and the reimbursement is there. What went missing was the accountability between the people providing care and the plans paying for it. MIA closes that gap with clean, visit-level records that both sides can verify and stand behind.</p>
         </div>
       </div>
       <div>
         <div class="why-photo"></div>
         <div class="quote teal">
           <div class="quote-text">&ldquo;I love what you&rsquo;re building. I&rsquo;m even more excited that more insurance payers are letting providers bill for these services. A doula gives dedicated care right alongside the OB.&rdquo;</div>
-          <div class="quote-attr">Kay</div>
+          <div class="quote-attr">Kay Ward, Healthcare Credentialing Leader, Houston, Texas</div>
         </div>
       </div>
     </div>
@@ -406,15 +406,15 @@ body.modal-open{overflow:hidden}
     <div class="why-cards reveal">
       <div class="why-card">
         <div class="why-num">$<span class="rollnum" data-target="1044">0</span></div>
-        <div class="why-card-l">set aside to pay a doula for one pregnancy, and most of it is never claimed.</div>
+        <div class="why-card-l">allocated per pregnancy to cover doula care. Most of it is never claimed.</div>
       </div>
       <div class="why-card">
         <div class="why-num"><span class="rollnum" data-target="27000">0</span>+</div>
-        <div class="why-card-l">births SoonerCare covers in Oklahoma every single year.</div>
+        <div class="why-card-l">births funded by SoonerCare in Oklahoma each year. The care is there.</div>
       </div>
       <div class="why-card why-card-bridge">
         <div class="why-num">0</div>
-        <div class="why-card-l">systems existed to carry that care to the payer. MIA is the bridge.</div>
+        <div class="why-card-l">tools existed to move that care to the payer. MIA is the first.</div>
       </div>
     </div>
     <div class="why-callout reveal" style="max-width:760px;margin-top:30px">
@@ -464,10 +464,10 @@ body.modal-open{overflow:hidden}
       <div class="doulas-copy">
         <span class="eyebrow">For Doulas</span>
         <h2 class="section-hl">Speak freely.<br>MIA does the rest.</h2>
-        <p class="doulas-body">After a visit, open MIA and just talk, about 90 seconds in your own words. MIA checks your note against all of your state&rsquo;s requirements and builds a clean, submission-ready record, spoken in your own voice and kept as a living record of the care. Starting in Oklahoma, you get paid for the care you gave.</p>
+        <p class="doulas-body">After a visit, open MIA and just talk for about 90 seconds, in your own words. MIA checks what you said against your state&rsquo;s requirements and builds a clean, submission-ready record. It stays in your voice and becomes a lasting record of the care you gave. Starting in Oklahoma, that record is what gets you paid.</p>
         <div class="doula-quote">
           <div class="doula-quote-text">&ldquo;I love this. The doulas I mentor could really benefit from something like this. Documentation is one of the top challenges we have with them.&rdquo;</div>
-          <div class="doula-quote-attr">Jacquelyn Clemmons, Systems Change Advocate</div>
+          <div class="doula-quote-attr">Jacquelyn Clemmons, Systems Change Advocate, South Carolina</div>
         </div>
       </div>
     </div>
@@ -493,10 +493,10 @@ body.modal-open{overflow:hidden}
       </div>
       <div>
         <h2 class="founder-hl1">Built by someone who was in that room.</h2>
-        <p class="founder-bio">Mia Woodson is a U.S. Army veteran, a mother of four, and has called Oklahoma home for nearly twenty years. In the Army she served as a lead soldier, planning and running training operations inside complex logistics systems, where every person and supply had to be tracked accurately and on time. Years later, raising her family and working as a birth doula in Oklahoma, she watched that same kind of system fail the people doing the most important work.</p>
-        <p class="founder-bio">The care was happening every day. The records, the coordination, and the pay were not. It was never a problem of effort. It was a gap in infrastructure. So she built PDI, drawing on the discipline she learned in the Army and everything she lived as a mother and birth worker.</p>
+        <p class="founder-bio">Mia Woodson is a U.S. Army veteran, mother of four, and has called Oklahoma home for nearly twenty years. In the Army, she coordinated large-scale training operations across complex logistics systems, where every person, supply, and timeline had to be accounted for with precision. Years later, as a practicing birth doula in Oklahoma, she watched that same discipline go missing in the one system that needed it most.</p>
+        <p class="founder-bio">The care was happening every day. The documentation, coordination, and pay were not keeping pace. It was not a failure of effort. It was a structural gap. So she built PDI, applying the operational rigor she developed in the Army to a corner of perinatal care that had gone underdocumented for far too long.</p>
         <div class="founder-quote">
-          <div class="founder-quote-text">"Voice is how we truly connect. When a birth worker captures the truth of what happened, those words become a living record, one that honors the care and stands the test of time. Protecting the integrity of the record protects the integrity of life."</div>
+          <div class="founder-quote-text">"...Voice is how we connect. When a birth worker captures the truth of what happened, that truth becomes a record. It honors the care that was given, and it holds up over time. Protect the integrity of the record, and you protect the integrity of a life."</div>
           <div class="founder-quote-attr">Mia, Founder &amp; CEO, Perinatal Documentation Integrity</div>
         </div>
       </div>
@@ -556,7 +556,7 @@ body.modal-open{overflow:hidden}
 
     <div class="su-panel" data-panel="support" hidden>
       <h2 class="bookend">A doula&rsquo;s doula.</h2>
-      <p class="waitlist-sub">If you are here to support our work, we consider you a doula&rsquo;s doula. Join the newsletter for the story behind PDI, the wins, and the ways you can help.</p>
+      <p class="waitlist-sub">If you are here to support our work, we consider you a doula&rsquo;s doula.<br>Subscribe to <em>For the Record</em>, where the story behind PDI comes to life: the wins, the hard-won lessons, and the families at the heart of every record we protect.</p>
       <form class="support-form" onsubmit="return false">
         <input class="support-email" type="email" placeholder="you@email.com" aria-label="Email">
         <button class="support-go" type="submit">Subscribe</button>
