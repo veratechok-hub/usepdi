@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIA, Maternal Integrity Assistant | PDI</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -24,8 +25,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .reveal.in{opacity:1;transform:none}
 .eyebrow{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;display:inline-block;color:var(--teal)}
 .eyebrow::after{content:"";display:block;width:34px;height:2px;background:var(--teal);margin-top:9px;border-radius:2px}
-.section-hl{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(36px,4.6vw,56px);font-weight:600;line-height:1.1;color:var(--plum);margin-bottom:18px}
-.body-lg{font-size:17px;color:var(--muted);line-height:1.65;max-width:490px}
+.section-hl{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(32px,3.8vw,48px);font-weight:600;line-height:1.1;color:var(--plum);margin-bottom:18px}
+.body-lg{font-size:18px;color:var(--muted);line-height:1.65;max-width:490px}
 .body-lg + .body-lg{margin-top:16px}
 .rollnum{font-weight:700;color:var(--clay);font-variant-numeric:tabular-nums}
 .btn{display:inline-block;padding:14px 30px;border-radius:7px;font-size:14px;font-weight:600;letter-spacing:.03em;cursor:pointer;text-decoration:none;transition:all .2s;border:none}
@@ -50,20 +51,26 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .nav-mobile a{padding:11px 0;font-size:15px;font-weight:600;color:var(--plum);text-decoration:none;border-bottom:1px solid var(--rule)}
 .nav-mobile .btn-nav-clay{margin-top:12px;text-align:center;color:#fff}
 @media(max-width:860px){.nav-links,.nav-ctas{display:none}.nav-inner{padding:0 22px}.nav-toggle{display:flex}.nav-mobile.open{display:flex}}
-/* HERO (photo background + plum scrim, white text) */
-#hero{position:relative;overflow:hidden;padding:0;background:var(--plum-deep)}
-#hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url('images/hero-hands-bw.jpg');background-size:cover;background-position:center 30%;background-repeat:no-repeat}
-#hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(44,20,64,.58) 0%,rgba(44,20,64,.66) 50%,rgba(44,20,64,.86) 100%)}
-.hero-inner{position:relative;z-index:2;text-align:center;max-width:1000px;margin:0 auto;padding:104px 24px 96px}
-.hero-eyebrow{margin-bottom:22px;letter-spacing:.14em;color:#E9DEF6;font-size:16px}
+/* HERO (photo background + plum overlay) */
+#hero{position:relative;overflow:hidden;padding:0}
+.hero-bg{position:absolute;inset:0;background:url('images/hero-hands-bw.jpg') center 26%/cover;filter:grayscale(1)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(42,20,64,.82),rgba(61,28,92,.66) 55%,rgba(58,104,96,.5))}
+.hero-note{position:absolute;bottom:10px;left:0;right:0;text-align:center;z-index:3;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:1060px;margin:0 auto;padding:108px 24px 104px}
+#hero .hero-eyebrow{color:#fff}
+#hero .hero-hl{color:#fff}
+#hero .hero-hl em{color:var(--clay-soft)}
+#hero .hero-sub{color:rgba(255,255,255,.86)}
+#hero .btn-plum{background:var(--clay)}
+#hero .btn-plum:hover{background:var(--clay-soft)}
+#hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.6)}
+#hero .btn-ghost:hover{background:#fff;color:var(--plum)}
+.hero-eyebrow{margin-bottom:22px;letter-spacing:.14em}
 .hero-eyebrow::after{display:none}
-.hero-hl{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(34px,5.4vw,62px);font-weight:600;line-height:1.06;color:#fff;letter-spacing:-.01em;text-shadow:0 2px 24px rgba(20,8,32,.45)}
-.hero-hl em{font-style:normal;color:var(--clay-soft);display:block}
-.hero-hl .hl-w{white-space:nowrap}
-.hero-sub{font-size:clamp(17px,2.1vw,21px);color:rgba(255,255,255,.86);max-width:660px;margin:24px auto 32px;line-height:1.6;text-shadow:0 1px 14px rgba(20,8,32,.4)}
+.hero-hl{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(48px,6vw,76px);font-weight:600;line-height:1.05;color:var(--plum);letter-spacing:-.01em}
+.hero-hl em{font-style:normal;color:var(--clay);white-space:nowrap}
+.hero-sub{font-size:clamp(17px,2.1vw,21px);color:var(--muted);max-width:660px;margin:24px auto 32px;line-height:1.6}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.hero-ctas .btn-plum{background:var(--clay)}.hero-ctas .btn-plum:hover{background:var(--clay-soft)}
-.hero-ctas .btn-ghost{color:#fff;border-color:rgba(255,255,255,.6)}.hero-ctas .btn-ghost:hover{background:#fff;color:var(--plum);border-color:#fff}
 .photo-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
 .photo-ph span{color:rgba(255,255,255,.92);font-size:12.5px;font-weight:600;letter-spacing:.04em;line-height:1.5;max-width:260px}
 .photo-ph .ph-note{display:block;margin-top:6px;font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
@@ -71,29 +78,29 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 /* TICKER */
 #sec-ticker{background:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:26px 0;overflow:hidden}
 .ticker-heading{text-align:center;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.ticker-track{overflow:hidden;width:100%}
+.ticker-track{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
 .ticker-inner{display:flex;align-items:center;animation:scroll 38s linear infinite;width:max-content}
 .ticker-inner:hover{animation-play-state:paused}
-.logo-chip{display:inline-flex;align-items:center;justify-content:center;height:46px;min-width:150px;margin:0 24px;padding:0 22px;border:1px dashed var(--rule-dark);border-radius:9px;background:var(--cream);font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.03em;white-space:nowrap}
+.logo-chip{display:inline-flex;align-items:center;justify-content:center;height:40px;margin:0 36px;font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.07em;white-space:nowrap;text-transform:uppercase;opacity:.7}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 /* SECTION SHELL */
 section.block{padding:92px 0;border-top:1px solid var(--rule)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.quote{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:16px 20px;margin-top:18px}
+.quote{background:#fff;border:1px solid var(--rule);border-radius:11px;padding:22px 26px;margin-top:22px}
 .quote.teal{border-left:3px solid var(--teal)}
-.quote-text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:italic;font-weight:500;font-size:15.5px;color:var(--ink);line-height:1.6;margin-bottom:8px}
-.quote-attr{font-size:12px;font-weight:600;color:var(--muted)}
+.quote-text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:italic;font-weight:500;font-size:17px;color:var(--ink);line-height:1.65;margin-bottom:10px}
+.quote-attr{font-size:12px;font-weight:700;color:var(--clay)}
 /* WHY */
 #sec-why{background:#fff}
-.why-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:500;font-size:17px;color:var(--ink);line-height:1.65;max-width:520px;margin-bottom:8px}
-.why-callout{margin-top:22px;background:#fff;border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:10px;padding:18px 20px;max-width:560px;box-shadow:0 6px 16px -12px rgba(58,35,80,.35)}
-.why-callout-t{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:18px;font-weight:600;color:var(--teal);margin-bottom:5px}
-.why-callout p{font-size:15px;color:var(--muted);line-height:1.6}
-.why-photo{position:relative;height:500px;border-radius:14px;overflow:hidden}
-.why-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.why-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:400;font-size:18px;color:var(--muted);line-height:1.65;max-width:500px;margin-bottom:8px}
+.why-callout{margin-top:26px;background:#fff;border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:12px;padding:26px 28px;max-width:560px;box-shadow:0 18px 44px -26px rgba(58,35,80,.45)}
+.why-callout-t{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:21px;font-weight:600;color:var(--teal);margin-bottom:6px}
+.why-callout p{font-size:14.5px;color:var(--muted);line-height:1.6}
+#sec-why .photo-ph{height:500px;border-radius:14px;background:linear-gradient(150deg,#2A1640,#3D1C5C 50%,#3A6860)}
+.why-photo{position:relative;height:500px;border-radius:14px;overflow:hidden;background:url('images/why-couple.jpg') center/cover}
 /* SOLID BANNER */
 #sec-band{background:var(--plum);padding:86px 0;text-align:center}
-.band-h{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:600;color:#fff;line-height:1.06}
+.band-h{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(34px,4.2vw,52px);font-weight:600;color:#fff;line-height:1.08}
 .band-h em{font-style:normal;color:var(--clay-soft)}
 /* DOULAS */
 #sec-doulas{background:var(--clay-pale);border-top:1px solid var(--rule)}
@@ -102,8 +109,8 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 .doulas-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:56px}
 .doulas-copy{display:flex;flex-direction:column;justify-content:center}
 .doulas-body{font-size:17px;color:var(--muted);line-height:1.65;margin-bottom:16px;max-width:450px}
-.doula-quote{background:#fff;border:1px solid #EFD9CC;border-left:3px solid var(--plum);border-radius:10px;padding:18px 20px;margin-top:8px;box-shadow:0 6px 16px -14px rgba(176,86,54,.35)}
-.doula-quote-text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:italic;font-weight:500;font-size:16px;color:var(--ink);line-height:1.55;margin-bottom:10px}
+.doula-quote{background:#fff;border:1px solid #EFD9CC;border-left:3px solid var(--plum);border-radius:12px;padding:20px 22px;margin-top:8px;max-width:430px;box-shadow:0 16px 38px -28px rgba(176,86,54,.5)}
+.doula-quote-text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:italic;font-weight:500;font-size:17px;color:var(--ink);line-height:1.55;margin-bottom:12px}
 .doula-quote-attr{font-size:13px;font-weight:700;color:var(--clay)}
 .app-stage{display:flex;align-items:center;justify-content:center}
 .app-mockup{background:#1A0A2E;border-radius:28px;overflow:hidden;box-shadow:0 32px 80px rgba(61,28,92,.35);width:318px}
@@ -134,7 +141,7 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 .feature-body{font-size:15px;color:var(--muted);line-height:1.55}
 @media(max-width:900px){.doulas-grid{grid-template-columns:1fr;gap:40px}.feature-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.feature-grid{grid-template-columns:1fr}}
-/* PAYERS */
+/* PAYERS (exact v1 colors) */
 #sec-payers{background:#fff;border-top:1px solid var(--rule)}
 .pay-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
 .pay-features{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
@@ -142,11 +149,11 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 .pay-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px -22px rgba(61,28,92,.35)}
 .pay-icon{width:40px;height:40px;border-radius:10px;background:var(--plum);display:flex;align-items:center;justify-content:center;margin-bottom:15px}
 .pay-icon svg{width:19px;height:19px;stroke:#efe9d8}
-.pay-card h3{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:21px;font-weight:600;color:var(--plum);margin-bottom:7px}
-.pay-card p{font-size:15px;color:var(--muted);line-height:1.55}
+.pay-card h3{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:22px;font-weight:600;color:var(--plum);margin-bottom:7px}
+.pay-card p{font-size:15px;color:var(--muted);line-height:1.6}
 .pay-panel{background:var(--cream);border:1px solid var(--rule);border-radius:16px;padding:34px;box-shadow:0 18px 40px -26px rgba(58,35,80,.4);position:sticky;top:86px}
 .pay-panel h3{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:28px;font-weight:600;color:var(--plum);margin:6px 0 10px}
-.pay-intro{font-size:15.5px;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.pay-intro{font-size:16px;color:var(--muted);margin-bottom:22px;line-height:1.55}
 .field{margin-bottom:15px}
 .field label{display:block;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--plum);margin-bottom:6px}
 .field input,.field select{width:100%;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--rule-dark);border-radius:9px;padding:12px 13px;font-family:inherit;appearance:none}
@@ -158,13 +165,13 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 @media(max-width:900px){.pay-grid{grid-template-columns:1fr;gap:40px}.pay-panel{position:static}}
 @media(max-width:560px){.pay-features{grid-template-columns:1fr}}
 /* WAITLIST */
-#sec-waitlist{position:relative;overflow:hidden;background:var(--plum-deep);padding:88px 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
-#sec-waitlist::before{content:"";position:absolute;inset:0;z-index:0;background-image:url('images/cta-lactation-bw.jpg');background-size:cover;background-position:center 30%;background-repeat:no-repeat}
-#sec-waitlist::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(150deg,rgba(44,20,64,.88),rgba(61,28,92,.82) 55%,rgba(58,104,96,.8))}
+#sec-waitlist{position:relative;overflow:hidden;background:#161018;padding:88px 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+.wl-bg{position:absolute;inset:0;background:url('images/family.jpg') center 30%/cover;filter:grayscale(1) contrast(1.05)}
+.wl-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(18,12,22,.8),rgba(32,20,40,.64))}
 #sec-waitlist .container{position:relative;z-index:2}
-.bookend{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:600;color:#fff;line-height:1.08;margin-bottom:8px}
+.bookend{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(30px,3.8vw,48px);font-weight:600;color:#fff;line-height:1.08;margin-bottom:8px}
 .bookend em{font-style:normal;color:var(--clay-soft)}
-.waitlist-sub{font-size:17px;color:rgba(255,255,255,.78);margin-bottom:30px}
+.waitlist-sub{font-size:17px;color:rgba(255,255,255,.72);margin-bottom:30px}
 .wl-bar{display:flex;gap:0;max-width:640px;margin:0 auto;background:#fff;border-radius:11px;padding:7px;box-shadow:0 18px 46px -24px rgba(0,0,0,.55)}
 .wl-f{border:none;background:transparent;font-family:inherit;font-size:14px;color:var(--ink);padding:13px 15px;outline:none}
 .wl-email{flex:1.5;border-right:1px solid var(--rule)}
@@ -178,18 +185,17 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 /* FOUNDER */
 #sec-founder{background:#fff;border-top:1px solid var(--rule)}
 .founder-grid{display:grid;grid-template-columns:290px 1fr;gap:60px;align-items:start}
-.founder-circle{width:240px;height:240px;margin:0 auto 18px;border-radius:50%;overflow:hidden;position:relative;background:linear-gradient(150deg,#3D1C5C,#5A2D82 55%,#3A6860)}
-.founder-circle img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.founder-circle{width:240px;height:240px;margin:0 auto 18px;border-radius:50%;overflow:hidden;position:relative;background:url('images/founder-mia.jpg') center 18%/cover, linear-gradient(150deg,#3D1C5C,#5A2D82 55%,#3A6860)}
 .founder-circle .photo-ph span{font-size:11px;max-width:180px}
 .founder-name{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:20px;font-weight:600;color:var(--plum);text-align:center;margin-bottom:3px}
 .founder-role{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;text-align:center}
 .founder-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:14px}
 .chip{padding:5px 12px;border-radius:99px;font-size:11px;font-weight:600;background:var(--clay-pale);color:var(--clay);border:1px solid #F0DCD0}
-.founder-hl1{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;color:var(--plum);line-height:1.1;font-size:clamp(24px,3vw,38px);white-space:normal;margin-bottom:20px}
-@media(min-width:1180px){.founder-hl1{white-space:nowrap;font-size:33px}}
-.founder-bio{font-size:17px;color:var(--muted);line-height:1.65;margin-bottom:22px}
-.founder-quote{background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:18px 20px}
-.founder-quote-text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:italic;font-weight:500;font-size:16px;color:var(--ink);line-height:1.55}
+.founder-hl1{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;color:var(--plum);line-height:1.1;font-size:clamp(28px,3.6vw,44px);white-space:normal;margin-bottom:20px}
+@media(min-width:1160px){.founder-hl1{white-space:nowrap;font-size:35px}}
+.founder-bio{font-size:18px;color:var(--muted);line-height:1.65;margin-bottom:22px}
+.founder-quote{background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 11px 11px 0;padding:22px 26px}
+.founder-quote-text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:italic;font-weight:500;font-size:17px;color:var(--ink);line-height:1.6}
 .founder-quote-attr{margin-top:11px;font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
 @media(max-width:760px){.founder-grid{grid-template-columns:1fr;gap:36px}.founder-hl1{white-space:normal;font-size:30px}}
 /* FOOTER */
@@ -214,86 +220,89 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 @media(max-width:760px){.mcta{display:grid}}
 @media(max-width:900px){.container{padding:0 22px}.nav-inner{padding:0 22px}.two-col,.footer-inner{grid-template-columns:1fr;gap:38px}.hero-photo{height:300px}}
 .section-hl,.hero-hl,.band-h,.bookend,.nav-logo-mia,.app-head-t,.feature-title,.pay-card h3,.pay-panel h3,.pay-headline,.why-callout-t,.founder-name,.founder-hl1{font-family:'Lora',Georgia,serif}
-
-/* ===== PHONE MVP ===== */
-.phone-mvp{display:none}
-@media(max-width:760px){.desktop-site{display:none}.phone-mvp{display:block}}
-.phone-mvp{max-width:480px;margin:0 auto;background:#fff}
-.pm-bar{display:flex;align-items:center;gap:6px;justify-content:center;padding:16px 0 8px}
-.pm-pdi{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
-.pm-mia{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--plum)}
-.m-hero{position:relative;padding:46px 24px 40px;text-align:center;overflow:hidden;background:var(--plum-deep)}
-.m-hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url('images/hero-hands-bw.jpg');background-size:cover;background-position:center 35%}
-.m-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(44,20,64,.6),rgba(44,20,64,.72) 55%,rgba(44,20,64,.9))}
-.m-hero>*{position:relative;z-index:2}
-.m-kick{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E9DEF6;margin-bottom:13px;line-height:1.4}
-.m-hl{font-family:'Lora',serif;font-weight:600;line-height:1.1;color:#fff;font-size:30px;text-shadow:0 2px 18px rgba(20,8,32,.5)}
-.m-hl em{font-style:normal;color:var(--clay-soft);display:block}
-.m-sub{font-size:13.5px;color:rgba(255,255,255,.86);line-height:1.55;margin:12px auto 0;max-width:300px}
-.m-sec{padding:22px 18px 0}
-.sec-label{display:flex;align-items:center;gap:9px;margin-bottom:13px}
-.sec-label .t{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.sec-label .line{flex:1;height:1px;background:var(--rule)}
-.m-sec.dou .t{color:var(--clay)}
-.m-sec.pay .t{color:var(--teal)}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.feat{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:14px 13px 15px}
-.feat.dou{border-top:3px solid var(--clay)}
-.feat.pay{border-top:3px solid var(--teal)}
-.feat-ic{width:32px;height:32px;border-radius:9px;background:var(--plum);display:flex;align-items:center;justify-content:center;margin-bottom:11px}
-.feat h4{font-family:'Lora',serif;font-size:15px;font-weight:600;color:var(--plum);line-height:1.18;margin-bottom:5px}
-.feat p{font-size:12px;color:var(--muted);line-height:1.45}
-.appwrap{padding:18px 18px 0}
-.app-cap{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;text-align:center}
-.appp{background:#1A0A2E;border-radius:20px;overflow:hidden;box-shadow:0 18px 40px -22px rgba(61,28,92,.6)}
-.appp-head{background:var(--plum);padding:13px 16px}
-.appp-t{font-family:'Lora',serif;font-size:14px;font-weight:600;color:#fff;display:block}
-.appp-s{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;display:block}
-.appp-body{padding:16px}
-.appp-chip{display:inline-block;background:rgba(58,104,96,.22);border:1px solid rgba(58,104,96,.45);border-radius:99px;padding:4px 12px;font-size:9px;font-weight:700;color:var(--teal-light);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-.appp-client{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border-radius:8px;padding:10px 12px;margin-bottom:14px}
-.appp-av{width:32px;height:32px;border-radius:50%;background:var(--plum-light);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#fff;flex:none;font-family:'Lora',serif}
-.appp-cn{font-size:12px;font-weight:600;color:#fff}
-.appp-cs{font-size:9px;color:rgba(255,255,255,.5);margin-top:2px}
-.appp-rec{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.16);border-radius:12px;padding:18px 14px;text-align:center;margin-bottom:14px}
-.appp-mic{width:48px;height:48px;border-radius:50%;background:var(--plum);border:2px solid rgba(196,174,222,.45);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;box-shadow:0 0 0 7px rgba(61,28,92,.3)}
-.appp-rl{font-size:11px;color:rgba(255,255,255,.65)}
-.appp-rs{font-size:9px;color:rgba(255,255,255,.35);margin-top:3px}
-.appp-wp{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-.appp-wl{font-size:10px;color:rgba(255,255,255,.7);flex:1}
-.appp-tag{font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.appp-tag.done{color:var(--teal-light)}.appp-tag.pend{color:rgba(255,255,255,.3)}
-.appp-export{width:100%;margin-top:12px;padding:11px;background:var(--teal);color:#fff;border:none;border-radius:8px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-family:inherit}
-.m-cta{margin:16px 18px 0;border-radius:16px;padding:18px;border:1px solid var(--rule)}
-.m-cta.dou{background:linear-gradient(180deg,#fff,#FFFBF8);border-left:4px solid var(--clay)}
-.m-cta.pay{background:linear-gradient(180deg,#fff,#F7FBFA);border-left:4px solid var(--teal)}
-.m-cta h3{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--plum);line-height:1.2;margin-bottom:12px}
-.m-input{width:100%;font-family:inherit;font-size:14px;color:var(--ink);border:1.5px solid var(--rule-dark);border-radius:10px;padding:12px 13px;margin-bottom:10px;outline:none}
-.m-input:focus{border-color:var(--plum);box-shadow:0 0 0 3px rgba(61,28,92,.1)}
-.m-btn{display:block;width:100%;text-align:center;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.02em;border:none;border-radius:10px;padding:14px;cursor:pointer}
-.m-btn-clay{background:var(--clay);color:#fff}
-.m-btn-teal{background:var(--teal);color:#fff}
-.pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--cream);border:1px solid var(--rule);border-radius:99px;padding:4px 9px;margin-top:10px}
-.m-divider{height:1px;background:var(--rule);margin:22px 18px 0}
-.m-about{padding:18px 22px 4px}
-.m-about .lbl{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
-.m-about p{font-size:12.5px;color:var(--muted);line-height:1.55}
-.m-about p + p{margin-top:9px}
-.m-about b{color:var(--plum);font-weight:600}
-.m-foot{position:relative;overflow:hidden;padding:48px 24px 34px;text-align:center;margin-top:18px;background:#241540}
-.m-foot::before{content:"";position:absolute;inset:0;z-index:0;background-image:url('images/footer-feet-bw.jpg');background-size:cover;background-position:center 38%}
-.m-foot::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,8,32,.82),rgba(36,21,64,.9))}
-.m-foot>*{position:relative;z-index:2}
-.m-foot .fb{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-light);margin-bottom:4px}
-.m-foot .fl{font-size:11px;color:rgba(255,255,255,.7)}
-.m-foot .badges{margin-top:12px;display:flex;gap:6px;justify-content:center}
-.m-foot .badge{font-size:8.5px;font-weight:600;letter-spacing:.05em;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:3px 7px}
-
+.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1);z-index:0}
+#hero .hero-overlay{z-index:1}
+#hero .container{position:relative;z-index:2}
+/* MOBILE POLISH (<=600px): essentials, thumb-friendly, no iOS zoom */
+@media(max-width:600px){
+  section.block{padding:58px 0}
+  #sec-band{padding:60px 0}
+  .hero-inner{padding:74px 20px 84px}
+  .hero-hl{font-size:40px;line-height:1.08}
+  .hero-sub{font-size:16px;margin-top:20px}
+  .hero-ctas{flex-direction:column;width:100%}
+  .hero-ctas .btn{width:100%;text-align:center}
+  .section-hl{font-size:30px}
+  .founder-hl1{font-size:27px}
+  .band-h{font-size:30px}
+  .bookend{font-size:28px}
+  /* 16px form text stops iOS from auto-zooming on focus */
+  .field input,.field select,.wl-f{font-size:16px}
+  /* keep the sticky bottom action bar from covering the footer */
+  body{padding-bottom:60px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}
+}
+/* MOBILE HERO: still photo (doula holding hands on the couch) instead of video */
+@media(max-width:768px){
+  .hero-bg-video{display:none}
+  #hero{background:url('images/hero-hands-bw.jpg') center center/cover}
+}
+/* MOBILE CONTENT: 3 photos only (hero, founder, family) + 2 strongest cards per section */
+@media(max-width:768px){
+  .why-photo{display:none}
+  .feature-grid .feature-card:nth-child(n+3){display:none}
+  .pay-features .pay-card:nth-child(2),.pay-features .pay-card:nth-child(3){display:none}
+}
+/* WHY CARDS */
+.why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.why-card{background:var(--cream);border:1px solid var(--rule);border-radius:14px;padding:26px 24px;box-shadow:0 16px 40px -28px rgba(58,35,80,.4)}
+.why-card-bridge{background:var(--plum);border-color:var(--plum)}
+.why-num{font-family:'Lora',Georgia,serif;font-size:46px;font-weight:600;color:var(--clay);line-height:1;margin-bottom:10px}
+.why-card-bridge .why-num{color:var(--clay-soft)}
+.why-card-l{font-size:14.5px;color:var(--muted);line-height:1.55}
+.why-card-bridge .why-card-l{color:rgba(255,255,255,.86)}
+#sec-support{position:relative;overflow:hidden;background:#161018;padding:84px 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+#sec-support .eyebrow{color:var(--teal-light)}
+#sec-support .eyebrow::after{margin-left:auto;margin-right:auto;background:var(--teal-light)}
+#sec-support .support-note{color:rgba(255,255,255,.55)}
+.sup-bg{position:absolute;inset:0;background:url('images/family.jpg') center 28%/cover;filter:grayscale(1) contrast(1.05)}
+.sup-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(42,20,64,.86),rgba(58,104,96,.55))}
+.support-form{display:flex;max-width:520px;margin:0 auto;background:#fff;border-radius:11px;padding:7px;box-shadow:0 18px 46px -26px rgba(58,35,80,.4)}
+.support-email{flex:1;border:none;background:transparent;font-family:inherit;font-size:16px;color:var(--ink);padding:13px 15px;outline:none}
+.support-go{flex:none;background:var(--teal);color:#fff;border:none;border-radius:7px;font-weight:700;font-size:14px;padding:13px 24px;cursor:pointer;font-family:inherit;transition:background .2s}
+.support-go:hover{background:var(--teal-light)}
+.support-note{font-size:12px;color:var(--muted);margin-top:14px}
+#sec-founder-m{display:none}
+@media(max-width:768px){#sec-founder-m{display:block}#sec-founder{display:none}}
+@media(max-width:760px){.why-cards{grid-template-columns:1fr}}
+@media(max-width:600px){.support-form{flex-direction:column}.support-go{width:100%;margin-top:4px}}
+/* BOOK A DEMO MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:400;background:rgba(30,16,40,.55);display:none;align-items:flex-start;justify-content:center;padding:40px 18px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal-box{position:relative;background:#fff;border-radius:16px;padding:36px 32px;max-width:440px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.4);margin:auto}
+.modal-h{font-family:'Lora',Georgia,serif;font-size:28px;font-weight:600;color:var(--plum);margin:6px 0 10px}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:30px;line-height:1;color:var(--muted);cursor:pointer}
+.modal-close:hover{color:var(--plum)}
+body.modal-open{overflow:hidden}
+#sec-why-m{display:none}
+@media(max-width:768px){#sec-why-m{display:block}#sec-why{display:none}}
+.pay-cta-mobile{display:none}
+@media(max-width:768px){.pay-form-desktop{display:none}.pay-cta-mobile{display:block}}
+.btn-support{background:var(--teal);color:#fff;border:1.5px solid var(--teal)}
+.btn-support:hover{background:var(--teal-light);border-color:var(--teal-light);transform:translateY(-1px)}
+/* SIGNUP BAND (waitlist + support toggle) */
+#sec-signup{position:relative;overflow:hidden;background:#161018;padding:88px 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+.su-bg{position:absolute;inset:0;background:url('images/family.jpg') center 30%/cover;filter:grayscale(1) contrast(1.05)}
+.su-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(42,20,64,.84),rgba(18,12,22,.72))}
+.su-toggle{display:inline-flex;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:5px;margin-bottom:30px}
+.su-tab{background:transparent;border:none;color:rgba(255,255,255,.72);font-family:inherit;font-size:14px;font-weight:600;padding:10px 22px;border-radius:99px;cursor:pointer;transition:all .2s}
+.su-tab.active{background:#fff;color:var(--plum)}
+.su-panel[hidden]{display:none}
+#sec-signup .support-note{color:rgba(255,255,255,.55)}
 </style>
-<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 </head>
 <body>
-<div class="desktop-site">
+
 <nav id="sec-nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#hero"><span class="nav-logo-pdi">PDI</span><span class="nav-logo-divider">&middot;</span><span class="nav-logo-mia">MIA</span></a>
@@ -301,29 +310,33 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
       <li><a href="#sec-doulas">For Doulas</a></li>
       <li><a href="#sec-payers">For Payers</a></li>
       <li><a href="#how-mia-works">How MIA Works</a></li>
+      <li><a href="#sec-signup" data-signup-mode="support">Support</a></li>
     </ul>
     <div class="nav-ctas">
-      <a href="#sec-waitlist" class="btn-nav btn-nav-clay">Join the Waitlist</a>
+      <a href="#sec-signup" data-signup-mode="waitlist" class="btn-nav btn-nav-clay">Join the Waitlist</a>
       <a href="#sec-payers" class="btn-nav btn-nav-payer">For Payers</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <nav class="nav-mobile" id="navMobile">
-    <a href="#sec-doulas">For Doulas</a><a href="#sec-payers">For Payers</a><a href="#how-mia-works">How MIA Works</a>
-    <a href="#sec-waitlist" class="btn-nav btn-nav-clay">Join the Waitlist</a>
+    <a href="#sec-doulas">For Doulas</a><a href="#sec-payers">For Payers</a><a href="#how-mia-works">How MIA Works</a><a href="#sec-signup" data-signup-mode="support">Support</a>
+    <a href="#sec-signup" data-signup-mode="waitlist" class="btn-nav btn-nav-clay">Join the Waitlist</a>
   </nav>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
+  <video class="hero-bg-video" autoplay muted loop playsinline poster="images/hero-hands-bw.jpg"><source src="images/hero-birth.mp4" type="video/mp4"></video>
+  <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-inner">
       <span class="eyebrow hero-eyebrow">For doulas and the payers who cover them</span>
-      <h1 class="hero-hl"><span class="hl-w">The care was always real.</span><em>Now it counts.</em></h1>
-      <p class="hero-sub">Say what happened at the visit. Our Maternal Integrity Assistant<br>MIA turns it into a record your state Medicaid plan will accept,<br><span style="white-space:nowrap">in about 90 seconds of talking.</span></p>
+      <h1 class="hero-hl">The care was always real.<br><em>Now it counts.</em></h1>
+      <p class="hero-sub">Say what happened at the visit. Our Maternal Integrity Assistant<br>MIA turns it into a record your state Medicaid plan will accept,<br>in about 90 seconds of talking.</p>
       <div class="hero-ctas">
-        <a href="#sec-waitlist" class="btn btn-plum">Join the Waitlist</a>
+        <a href="#sec-signup" data-signup-mode="waitlist" class="btn btn-plum">Join the Waitlist</a>
         <a href="#sec-payers" class="btn btn-ghost">For Payers</a>
+        <a href="#sec-signup" data-signup-mode="support" class="btn btn-support">Support a Birthworker</a>
       </div>
     </div>
   </div>
@@ -340,26 +353,77 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
   </div></div>
 </div>
 
-<!-- WHY -->
+<!-- FOUNDER (mobile only, near top) -->
+<section id="sec-founder-m" class="block">
+  <div class="container">
+    <span class="eyebrow">About the Founder</span>
+    <div class="founder-grid reveal" style="margin-top:12px">
+      <div>
+        <div class="founder-circle"></div>
+        <div class="founder-name">Mia Woodson</div>
+        <div class="founder-role">Founder &amp; CEO, PDI</div>
+        <div class="founder-chips"><span class="chip">U.S. Army Veteran</span><span class="chip">Mother of Four</span><span class="chip">Birth Doula</span><span class="chip">Pre-PA Student</span><span class="chip">Oklahoma</span></div>
+      </div>
+      <div>
+        <div class="founder-quote" style="margin-top:0">
+          <div class="founder-quote-text">"Voice is how we truly connect. When a birth worker speaks what happened, those words become a living record, one that honors the care and stands the test of time. Protecting the integrity of the record protects the integrity of life."</div>
+          <div class="founder-quote-attr">Mia, Founder &amp; CEO, Perinatal Documentation Integrity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY (desktop, two-col) -->
 <section id="sec-why" class="block">
   <div class="container">
     <div class="two-col reveal">
       <div>
         <span class="eyebrow">Why MIA Exists</span>
         <h2 class="section-hl">The bridge between<br>care and coverage.</h2>
-        <p class="why-body">Up to $<span class="rollnum" data-target="1044">0</span> is set aside to pay a doula for every pregnancy. Most of it is never claimed. Not because the care wasn&rsquo;t given, but because the paperwork falls apart before it reaches a payer. In Oklahoma alone, SoonerCare covers more than <span class="rollnum" data-target="27000">0</span> births a year.</p>
+        <p class="why-body">Up to $<span class="rollnum" data-target="1044">0</span> is set aside to pay a doula for one pregnancy. Most of it is never claimed. Not because the care wasn&rsquo;t given, but because the paperwork falls apart before it reaches a payer. In Oklahoma alone, SoonerCare covers more than <span class="rollnum" data-target="27000">0</span> births a year.</p>
         <div class="why-callout">
-          <div class="why-callout-t">The Clarity Check</div>
-          <p>Payers support doula care, and they do pay. Somewhere along the way the trust broke. Today, MIA is how we rebuild it, so providers and payers close the gap together, with integrity.</p>
+          <div class="why-callout-t">Total transparency.</div>
+          <p>Payers want to cover this care, and they do pay for it. What broke over time was the trust between the people giving care and the people paying for it. MIA rebuilds that trust the honest way, with clean, verifiable records on every visit.</p>
         </div>
       </div>
       <div>
-        <div class="why-photo"><img src="images/why-couple.jpg" alt="A pregnant person and their doula sharing coffee at home"></div>
+        <div class="why-photo"></div>
         <div class="quote teal">
           <div class="quote-text">&ldquo;I love what you&rsquo;re building. I&rsquo;m even more excited that more insurance payers are letting providers bill for these services. A doula gives dedicated care right alongside the OB.&rdquo;</div>
           <div class="quote-attr">Kay</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY (mobile, 3 cards) -->
+<section id="sec-why-m" class="block">
+  <div class="container">
+    <span class="eyebrow">Why MIA Exists</span>
+    <h2 class="section-hl" style="max-width:680px">The bridge between care and coverage.</h2>
+    <div class="why-cards reveal">
+      <div class="why-card">
+        <div class="why-num">$<span class="rollnum" data-target="1044">0</span></div>
+        <div class="why-card-l">set aside to pay a doula for one pregnancy, and most of it is never claimed.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num"><span class="rollnum" data-target="27000">0</span>+</div>
+        <div class="why-card-l">births SoonerCare covers in Oklahoma every single year.</div>
+      </div>
+      <div class="why-card why-card-bridge">
+        <div class="why-num">0</div>
+        <div class="why-card-l">systems existed to carry that care to the payer. MIA is the bridge.</div>
+      </div>
+    </div>
+    <div class="why-callout reveal" style="max-width:760px;margin-top:30px">
+      <div class="why-callout-t">Total transparency.</div>
+      <p>Payers want to cover this care, and they do pay for it. What broke over time was the trust between the people giving care and the people paying for it. MIA rebuilds that trust the honest way, with clean, verifiable records on every visit.</p>
+    </div>
+    <div class="quote teal reveal" style="margin-top:22px;max-width:640px">
+      <div class="quote-text">&ldquo;I love what you&rsquo;re building. I&rsquo;m even more excited that more insurance payers are letting providers bill for these services. A doula gives dedicated care right alongside the OB.&rdquo;</div>
+      <div class="quote-attr">Kay</div>
     </div>
   </div>
 </section>
@@ -400,8 +464,7 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
       <div class="doulas-copy">
         <span class="eyebrow">For Doulas</span>
         <h2 class="section-hl">Speak freely.<br>MIA does the rest.</h2>
-        <p class="doulas-body">After a visit, open MIA and just talk. About 90 seconds for a prenatal or postpartum visit, a little more for a birth. This is your chance to say what really happened, and what it took to be the support your client needed.</p>
-        <p class="doulas-body">MIA checks your note against all of your state&rsquo;s requirements and builds a clean, submission-ready record. Starting in Oklahoma, you get paid for the care you gave. MIA&rsquo;s got you.</p>
+        <p class="doulas-body">After a visit, open MIA and just talk, about 90 seconds in your own words. MIA checks your note against all of your state&rsquo;s requirements and builds a clean, submission-ready record, spoken in your own voice and kept as a living record of the care. Starting in Oklahoma, you get paid for the care you gave.</p>
         <div class="doula-quote">
           <div class="doula-quote-text">&ldquo;I love this. The doulas I mentor could really benefit from something like this. Documentation is one of the top challenges we have with them.&rdquo;</div>
           <div class="doula-quote-attr">Jacquelyn Clemmons, Systems Change Advocate</div>
@@ -413,6 +476,30 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
       <div class="feature-card"><div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><polyline points="9 14 11 16 15 12"/></svg></div><div class="feature-title">Checked As You Go</div><div class="feature-body">Every note is matched against Oklahoma&rsquo;s SoonerCare rules. You see what is complete and what is missing before you close the app.</div></div>
       <div class="feature-card"><div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="feature-title">Private by Design</div><div class="feature-body">No client names needed to record. MIA handles your audio without personal details and adds identifiers only at the secure, HIPAA-safe export.</div></div>
       <div class="feature-card"><div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="feature-title">One-Tap Record</div><div class="feature-body">A submission-ready record in seconds. One tap and it is formatted, complete, and ready for billing.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section id="sec-founder" class="block">
+  <div class="container">
+    <span class="eyebrow">About the Founder</span>
+    <div class="founder-grid reveal" style="margin-top:12px">
+      <div>
+        <div class="founder-circle"></div>
+        <div class="founder-name">Mia Woodson</div>
+        <div class="founder-role">Founder &amp; CEO, PDI</div>
+        <div class="founder-chips"><span class="chip">U.S. Army Veteran</span><span class="chip">Mother of Four</span><span class="chip">Birth Doula</span><span class="chip">Pre-PA Student</span><span class="chip">Oklahoma</span></div>
+      </div>
+      <div>
+        <h2 class="founder-hl1">Built by someone who was in that room.</h2>
+        <p class="founder-bio">Mia Woodson is a U.S. Army veteran, a mother of four, and has called Oklahoma home for nearly twenty years. In the Army she served as a lead soldier, planning and running training operations inside complex logistics systems, where every person and supply had to be tracked accurately and on time. Years later, raising her family and working as a birth doula in Oklahoma, she watched that same kind of system fail the people doing the most important work.</p>
+        <p class="founder-bio">The care was happening every day. The records, the coordination, and the pay were not. It was never a problem of effort. It was a gap in infrastructure. So she built PDI, drawing on the discipline she learned in the Army and everything she lived as a mother and birth worker.</p>
+        <div class="founder-quote">
+          <div class="founder-quote-text">"Voice is how we truly connect. When a birth worker speaks what happened, those words become a living record, one that honors the care and stands the test of time. Protecting the integrity of the record protects the integrity of life."</div>
+          <div class="founder-quote-attr">Mia, Founder &amp; CEO, Perinatal Documentation Integrity</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -436,59 +523,50 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
         <span class="eyebrow" style="margin-bottom:4px">Let&rsquo;s Talk</span>
         <h3>Book a Demo</h3>
         <p class="pay-intro">Bring your team. We&rsquo;ll show you how MIA turns community doula visits into clean, billable records, how to give your doulas access, and what coverage could look like across your network.</p>
-        <form onsubmit="return false">
-          <div class="field"><label for="p-name">Full Name</label><input id="p-name" type="text" placeholder="Your name"></div>
-          <div class="field"><label for="p-org">Organization</label><input id="p-org" type="text" placeholder="MCO, agency, or health system"></div>
-          <div class="field"><label for="p-email">Email</label><input id="p-email" type="email" placeholder="you@organization.com"></div>
-          <div class="field"><label for="p-role">Your Role</label><select id="p-role"><option value="" disabled selected>Select your role</option><option>Payer / MCO leadership</option><option>State Medicaid agency</option><option>Health system or provider network</option><option>Doula organization</option><option>Other</option></select></div>
-          <button class="pay-submit" type="submit">Request My Demo &rarr;</button>
-        </form>
+        <button class="pay-submit book-demo" type="button">Book a Demo &rarr;</button>
         <div class="pay-assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>BAA available. HIPAA-compliant by design. No PHI kept after processing.</span></div>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- WAITLIST -->
-<section id="sec-waitlist">
-  <div class="container">
-    <h2 class="bookend">The care was always real. <em>Now it counts.</em></h2>
-    <p class="waitlist-sub">Join the waitlist for early access. Oklahoma doulas move to the front.</p>
-    <div class="wl-bar">
-      <input class="wl-f wl-email" type="email" placeholder="your@email.com">
-      <select class="wl-f wl-role" aria-label="Your role">
-        <option value="" disabled selected>I&rsquo;m a...</option>
-        <option>Doula</option><option>Midwife</option><option>Lactation consultant</option><option>Health org</option><option>Other</option>
-      </select>
-      <button class="wl-go">Join the Waitlist</button>
+<!-- SIGNUP (waitlist + support, one family-photo band with a toggle) -->
+<section id="sec-signup">
+  <div class="su-bg"></div>
+  <div class="su-overlay"></div>
+  <div class="container" style="position:relative;z-index:2;text-align:center">
+    <div class="su-toggle">
+      <button class="su-tab active" type="button" data-panel="waitlist">Join the waitlist</button>
+      <button class="su-tab" type="button" data-panel="support">Support the work</button>
     </div>
-    <div class="waitlist-note">No spam. We never sell your data. Just early access when we open.</div>
+
+    <div class="su-panel" data-panel="waitlist">
+      <h2 class="bookend">The care was always real. <em>Now it counts.</em></h2>
+      <p class="waitlist-sub">Join the waitlist for early access. Oklahoma doulas move to the front.</p>
+      <div class="wl-bar">
+        <input class="wl-f wl-email" type="email" placeholder="your@email.com">
+        <select class="wl-f wl-role" aria-label="Your role">
+          <option value="" disabled selected>I&rsquo;m a...</option>
+          <option>Doula</option><option>Midwife</option><option>Lactation consultant</option><option>Health org</option><option>Other</option>
+        </select>
+        <button class="wl-go">Join the Waitlist</button>
+      </div>
+      <div class="waitlist-note">No spam. We never sell your data. Just early access when we open.</div>
+    </div>
+
+    <div class="su-panel" data-panel="support" hidden>
+      <h2 class="bookend">A doula&rsquo;s doula.</h2>
+      <p class="waitlist-sub">If you are here to support our work, we consider you a doula&rsquo;s doula. Join the newsletter for the story behind PDI, the wins, and the ways you can help.</p>
+      <form class="support-form" onsubmit="return false">
+        <input class="support-email" type="email" placeholder="you@email.com" aria-label="Email">
+        <button class="support-go" type="submit">Subscribe</button>
+      </form>
+      <div class="support-note">Powered by Beehiiv. No spam, unsubscribe anytime.</div>
+    </div>
+
     <div class="payer-nudge">
       <div class="payer-nudge-l">Payer or MCO partner? Book a discovery call instead.</div>
       <a href="#sec-payers" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.45)">For Payers</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER -->
-<section id="sec-founder" class="block">
-  <div class="container">
-    <span class="eyebrow">About the Founder</span>
-    <div class="founder-grid reveal" style="margin-top:12px">
-      <div>
-        <div class="founder-circle"><img src="images/founder-mia.jpg" alt="Mia Woodson, Founder and CEO of PDI"></div>
-        <div class="founder-name">Mia Woodson</div>
-        <div class="founder-role">Founder &amp; CEO, PDI</div>
-        <div class="founder-chips"><span class="chip">U.S. Veteran</span><span class="chip">Oklahoma Mom</span><span class="chip">Birth Doula</span><span class="chip">Entrepreneur</span></div>
-      </div>
-      <div>
-        <h2 class="founder-hl1">Built by someone who was in that room.</h2>
-        <p class="founder-bio">Mia is a U.S. veteran, entrepreneur, and practicing birth doula serving families across Oklahoma. She built PDI because she lived the gap firsthand. Doing the work, getting the outcomes, and watching it disappear into the space between community care and the clinical record. MIA is the tool she needed and could not find.</p>
-        <div class="founder-quote">
-          <div class="founder-quote-text">&ldquo;Every birth deserves a full record. Every doula deserves full credit. We built the system to make both possible.&rdquo;</div>
-          <div class="founder-quote-attr">Mia, Founder &amp; CEO, Perinatal Documentation Integrity</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -504,7 +582,7 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
       </div>
       <div>
         <div class="footer-col-t">Navigate</div>
-        <ul class="footer-links"><li><a href="#sec-doulas">For Doulas</a></li><li><a href="#sec-payers">For Payers &amp; MCOs</a></li><li><a href="#how-mia-works">How MIA Works</a></li><li><a href="#sec-founder">About</a></li><li><a href="#sec-waitlist">Join the Waitlist</a></li></ul>
+        <ul class="footer-links"><li><a href="#sec-doulas">For Doulas</a></li><li><a href="#sec-payers">For Payers &amp; MCOs</a></li><li><a href="#how-mia-works">How MIA Works</a></li><li><a href="#sec-founder">About</a></li><li><a href="#sec-signup" data-signup-mode="waitlist">Join the Waitlist</a></li></ul>
       </div>
       <div class="footer-contact">
         <div class="footer-col-t">Contact</div>
@@ -521,68 +599,47 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
 </footer>
 
 <div class="mcta" id="mcta"><a href="#sec-doulas" class="m-d">For Doulas</a><a href="#sec-payers" class="m-p">For Payers</a></div>
-</div><!--/desktop-site-->
-<div class="phone-mvp">
-  <div class="pm-bar"><span class="pm-pdi">PDI</span><span class="pm-mia">MIA</span></div>
-  <section class="m-hero">
-    <div class="m-kick">For doulas and the payers who cover them</div>
-    <h1 class="m-hl">The care was always real.<em>Now it counts.</em></h1>
-    <p class="m-sub">Say what happened at the visit. MIA turns it into a record your state Medicaid plan will accept, in about 90 seconds.</p>
-  </section>
-  <section class="m-sec dou">
-    <div class="sec-label"><span class="t">For Doulas</span><span class="line"></span></div>
-    <div class="feat-grid">
-      <div class="feat dou"><div class="feat-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div><h4>Just Talk</h4><p>Speak naturally after your visit. No templates, no clinical words.</p></div>
-      <div class="feat dou"><div class="feat-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><polyline points="9 14 11 16 15 12"/></svg></div><h4>Checked As You Go</h4><p>Matched to your state&rsquo;s rules in real time, so you get paid.</p></div>
-    </div>
-  </section>
-  <div class="appwrap">
-    <div class="app-cap">Inside MIA</div>
-    <div class="appp">
-      <div class="appp-head"><span class="appp-t">MIA</span><span class="appp-s">Visit Documentation</span></div>
-      <div class="appp-body">
-        <span class="appp-chip">Visit in Progress</span>
-        <div class="appp-client"><div class="appp-av">C</div><div><div class="appp-cn">Client #2847</div><div class="appp-cs">36 weeks &middot; Visit 4 of 6</div></div></div>
-        <div class="appp-rec"><div class="appp-mic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div><div class="appp-rl">Tap to speak your visit notes</div><div class="appp-rs">About 90 seconds &middot; in your own words</div></div>
-        <div class="appp-wp"><span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6AA396" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="appp-wl">Services given documented</span><span class="appp-tag done">Done</span></div>
-        <div class="appp-wp"><span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6AA396" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="appp-wl">Visit length and location</span><span class="appp-tag done">Done</span></div>
-        <div class="appp-wp"><span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6AA396" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="appp-wl">Mom&rsquo;s status checked</span><span class="appp-tag done">Done</span></div>
-        <div class="appp-wp"><span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"><circle cx="12" cy="12" r="9"/></svg></span><span class="appp-wl">Birth plan talked through</span><span class="appp-tag pend">Pending</span></div>
-        <button class="appp-export">Export Clean Record &rarr;</button>
-      </div>
-    </div>
-  </div>
-  <div class="m-cta dou">
-    <h3>Get paid for the care you already gave.</h3>
-    <input id="ph-email" class="m-input" type="email" placeholder="your@email.com">
-    <button id="ph-waitlist" class="m-btn m-btn-clay">Join the Waitlist</button>
-    <span class="pill">Oklahoma doulas move to the front</span>
-  </div>
-  <section class="m-sec pay">
-    <div class="sec-label"><span class="t">For Payers &amp; Orgs</span><span class="line"></span></div>
-    <div class="feat-grid">
-      <div class="feat pay"><div class="feat-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div><h4>Outcomes You Can See</h4><p>Anonymized results across the workforce, in a form you can use.</p></div>
-      <div class="feat pay"><div class="feat-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><h4>Verified Work First</h4><p>Every visit is checked against your state&rsquo;s rules first.</p></div>
-    </div>
-  </section>
-  <div class="m-cta pay">
-    <h3>Clean, billable records from every visit.</h3>
-    <button id="ph-demo" class="m-btn m-btn-teal">Book a Demo</button>
-    <span class="pill">Opens your Calendly</span>
-  </div>
-  <div class="m-divider"></div>
-  <section class="m-about">
-    <div class="lbl">About</div>
-    <p><b>PDI</b> connects the community perinatal workforce to the payers who cover them, starting with documentation they can trust.</p>
-    <p><b>MIA</b> is the voice documentation tool. Speak your visit notes and MIA turns them into a clean, submission-ready record.</p>
-  </section>
-  <div class="m-foot">
-    <div class="fb">Perinatal Documentation Integrity</div>
-    <div class="fl">Tulsa, Oklahoma &middot; usepdi.com</div>
-    <div class="badges"><span class="badge">HIPAA</span><span class="badge">BAA Available</span><span class="badge">PHI-Safe</span></div>
+
+<!-- BOOK A DEMO MODAL -->
+<div class="modal-overlay" id="demoModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="demoClose" aria-label="Close">&times;</button>
+    <span class="eyebrow" style="margin-bottom:4px">Let&rsquo;s Talk</span>
+    <h3 class="modal-h">Book a Demo</h3>
+    <p class="pay-intro">Bring your team. We&rsquo;ll show you how MIA turns community doula visits into clean, billable records, and what coverage could look like across your network.</p>
+    <form onsubmit="return false">
+      <div class="field"><label for="m-name">Full Name</label><input id="m-name" type="text" placeholder="Your name"></div>
+      <div class="field"><label for="m-org">Organization</label><input id="m-org" type="text" placeholder="MCO, agency, or health system"></div>
+      <div class="field"><label for="m-email">Email</label><input id="m-email" type="email" placeholder="you@organization.com"></div>
+      <div class="field"><label for="m-role">Your Role</label><select id="m-role"><option value="" disabled selected>Select your role</option><option>Payer / MCO leadership</option><option>State Medicaid agency</option><option>Health system or provider network</option><option>Doula organization</option><option>Other</option></select></div>
+      <button class="pay-submit" type="submit">Request My Demo &rarr;</button>
+    </form>
+    <div class="pay-assure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>BAA available. HIPAA-compliant by design. No PHI kept after processing.</span></div>
   </div>
 </div>
 
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){
+  var C=window.PDI_CONFIG||{};
+  var sbReady=C.SUPABASE_URL&&C.SUPABASE_URL.indexOf('YOUR-PROJECT')===-1&&window.supabase;
+  var sb=sbReady?window.supabase.createClient(C.SUPABASE_URL,C.SUPABASE_ANON_KEY):null;
+  function save(email,role,source){ if(sb){try{sb.from('waitlist').insert({email:email,role:role||null,source:source}).then(function(){},function(){});}catch(e){}} }
+  function beehiiv(email){ if(C.BEEHIIV_URL&&C.BEEHIIV_URL.indexOf('YOUR-PUBLICATION')===-1){window.open(C.BEEHIIV_URL+(C.BEEHIIV_URL.indexOf('?')>-1?'&':'?')+'email='+encodeURIComponent(email),'_blank');} }
+  var wlGo=document.querySelector('.wl-go');
+  if(wlGo){wlGo.addEventListener('click',function(){var em=(document.querySelector('.wl-email')||{}).value||'';var rl=(document.querySelector('.wl-role')||{}).value||'';if(!em){return;}save(em,rl,'waitlist');beehiiv(em);wlGo.textContent='You\u2019re on the list';});}
+  var sf=document.querySelector('.support-form');
+  if(sf){sf.addEventListener('submit',function(e){e.preventDefault();var em=(document.querySelector('.support-email')||{}).value||'';if(!em){return;}save(em,null,'newsletter');beehiiv(em);var b=sf.querySelector('.support-go');if(b)b.textContent='Subscribed!';});}
+  function calendly(e){if(e)e.preventDefault();var u=C.CALENDLY_URL||'';if(u.indexOf('REPLACE-ME')!==-1){return false;}if(window.Calendly){window.Calendly.initPopupWidget({url:u});}else{window.open(u,'_blank');}return false;}
+  document.querySelectorAll('.book-demo').forEach(function(b){b.addEventListener('click',calendly);});
+  var sTabs=document.querySelectorAll('.su-tab'), sPanels=document.querySelectorAll('.su-panel');
+  function setSignup(mode){ sTabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-panel')===mode);}); sPanels.forEach(function(p){p.hidden=p.getAttribute('data-panel')!==mode;}); }
+  sTabs.forEach(function(t){t.addEventListener('click',function(){setSignup(t.getAttribute('data-panel'));});});
+  document.querySelectorAll('[data-signup-mode]').forEach(function(a){a.addEventListener('click',function(){setSignup(a.getAttribute('data-signup-mode'));});});
+})();
+</script>
 <script>
 (function(){
   var t=document.getElementById('navToggle'),m=document.getElementById('navMobile');
@@ -600,40 +657,15 @@ section.block{padding:92px 0;border-top:1px solid var(--rule)}
   } else { reveals.forEach(function(r){r.classList.add('in');}); nums.forEach(function(n){n.textContent=fmt(+n.getAttribute('data-target'));}); }
   var mcta=document.getElementById('mcta'),hero=document.getElementById('hero');
   window.addEventListener('scroll',function(){ if(window.scrollY>hero.offsetHeight-120)mcta.classList.add('show');else mcta.classList.remove('show'); },{passive:true});
-})();
-</script>
-<script src="config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<script>
-(function(){
-  var cfg = window.PDI_CONFIG || {};
-  var configured = cfg.SUPABASE_URL && cfg.SUPABASE_URL.indexOf('YOUR') === -1;
-  var sb = null;
-  if (configured && window.supabase) { sb = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY); }
-  function notify(m){ alert(m); }
-  async function joinWaitlist(email, role){
-    if(!email || email.indexOf('@')===-1){ notify('Please enter a valid email.'); return; }
-    if(!sb){ notify('Almost there. Add your Supabase keys in config.js to start saving signups.'); return; }
-    try{
-      var r = await sb.from('waitlist').insert([{ email: email, role: role || null, source: 'usepdi-landing' }]);
-      if(r.error){ notify('Something went wrong. Please try again.'); console.error(r.error); }
-      else { notify('You are on the list. Thank you.'); }
-    }catch(e){ notify('Something went wrong. Please try again.'); console.error(e); }
+  var dm=document.getElementById('demoModal');
+  if(dm){
+    var openDemo=function(){dm.classList.add('open');document.body.classList.add('modal-open');};
+    var closeDemo=function(){dm.classList.remove('open');document.body.classList.remove('modal-open');};
+    document.querySelectorAll('.open-demo').forEach(function(b){b.addEventListener('click',openDemo);});
+    var dc=document.getElementById('demoClose'); if(dc)dc.addEventListener('click',closeDemo);
+    dm.addEventListener('click',function(e){if(e.target===dm)closeDemo();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDemo();});
   }
-  function openCalendly(){
-    var url = cfg.CALENDLY_URL;
-    if(!url || url.indexOf('REPLACE') !== -1){ notify('Add your Calendly link in config.js to enable demo booking.'); return; }
-    if(window.Calendly){ window.Calendly.initPopupWidget({ url: url }); } else { window.open(url, '_blank'); }
-  }
-  var wl = document.querySelector('.wl-go');
-  if(wl){ wl.addEventListener('click', function(){ var e=document.querySelector('.wl-email'); var r=document.querySelector('.wl-role'); joinWaitlist(e?e.value:'', r?r.value:''); }); }
-  var pay = document.querySelector('.pay-submit');
-  if(pay){ pay.addEventListener('click', function(ev){ ev.preventDefault(); openCalendly(); }); }
-  var phw = document.getElementById('ph-waitlist');
-  if(phw){ phw.addEventListener('click', function(){ var e=document.getElementById('ph-email'); joinWaitlist(e?e.value:'', 'doula'); }); }
-  var phd = document.getElementById('ph-demo');
-  if(phd){ phd.addEventListener('click', openCalendly); }
 })();
 </script>
 </body>
