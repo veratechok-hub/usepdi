@@ -7,8 +7,8 @@
 //  BEEHIIV_URL                       -> your Beehiiv subscribe URL or embed link
 
 window.PDI_CONFIG = {
-  SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",
-  SUPABASE_ANON_KEY: "YOUR-ANON-KEY",
+  SUPABASE_URL: "https://gwbmghycepqnxhbwrnne.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3Ym1naHljZXBxbnhoYndybm5lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4NjI4NDYsImV4cCI6MjA4OTQzODg0Nn0.Q2KAigDfETbVbfPG7SVFBTAOPNSBBKUuAR0We0fRPag",
   CALENDLY_URL: "https://calendly.com/mia-usepdi/30min",
   BEEHIIV_URL: "https://usepdi.beehiiv.com/subscribe"
 };
