@@ -10,5 +10,5 @@ window.PDI_CONFIG = {
   SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",
   SUPABASE_ANON_KEY: "YOUR-ANON-KEY",
   CALENDLY_URL: "https://calendly.com/mia-usepdi/30min",
-  BEEHIIV_URL: "https://YOUR-PUBLICATION.beehiiv.com/subscribe"
+  BEEHIIV_URL: "https://usepdi.beehiiv.com/subscribe"
 };
