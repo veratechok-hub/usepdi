@@ -301,6 +301,21 @@ body.modal-open{overflow:hidden}
 .su-tab.active{background:#fff;color:var(--plum)}
 .su-panel[hidden]{display:none}
 #sec-signup .support-note{color:rgba(255,255,255,.55)}
+/* TAGLINE under the banner (desktop + mobile) */
+.band-tag{font-size:18px;color:rgba(255,255,255,.8);margin:18px auto 0;max-width:640px;line-height:1.5;text-wrap:balance}
+/* MOBILE INFO ARCHITECTURE: value first, credibility lower. Desktop unchanged. */
+@media(max-width:768px){
+  body{display:flex;flex-direction:column}
+  #sec-nav{order:0}#hero{order:1}.wristband{order:2}
+  #sec-why-m{order:3}#sec-band{order:4}#sec-doulas{order:5}#sec-payers{order:6}
+  #sec-founder-m{order:7}#sec-ticker{order:8}#sec-signup{order:9}#sec-footer{order:10}
+  .band-tag{font-size:15px}
+  /* Condense mobile: cut redundancy, keep who/what/when/why/how */
+  #sec-why-m .why-callout{display:none}
+  #sec-why-m .quote.teal{display:none}
+  #sec-payers .pay-features{display:none}
+  #sec-founder-m .founder-quote{display:none}
+}
 </style>
 </head>
 <body>
@@ -421,11 +436,11 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="why-callout reveal" style="max-width:760px;margin-top:30px">
       <div class="why-callout-t">Total transparency.</div>
-      <p>Payers want to cover this care, and they do pay for it. What broke over time was the trust between the people giving care and the people paying for it. MIA rebuilds that trust the honest way, with clean, verifiable records on every visit.</p>
+      <p>Payers already fund this care, and the reimbursement is there. What went missing was the accountability between the people providing care and the plans paying for it. MIA closes that gap with clean, visit-level records that both sides can verify and stand behind.</p>
     </div>
     <div class="quote teal reveal" style="margin-top:22px;max-width:640px">
       <div class="quote-text">&ldquo;I love what you&rsquo;re building. I&rsquo;m even more excited that more insurance payers are letting providers bill for these services. A doula gives dedicated care right alongside the OB.&rdquo;</div>
-      <div class="quote-attr">Kay</div>
+      <div class="quote-attr">Kay Ward, Healthcare Credentialing Leader, Houston, Texas</div>
     </div>
   </div>
 </section>
@@ -433,7 +448,8 @@ body.modal-open{overflow:hidden}
 <!-- SOLID BANNER -->
 <section id="sec-band">
   <div class="container reveal">
-    <h2 class="band-h">Get paid for the care <em>you already gave.</em></h2>
+    <h2 class="band-h">Built to make the care you give <em>reimbursable.</em></h2>
+    <p class="band-tag">The mission is local. The infrastructure is national. That&rsquo;s the difference.</p>
   </div>
 </section>
 
@@ -466,7 +482,7 @@ body.modal-open{overflow:hidden}
       <div class="doulas-copy">
         <span class="eyebrow">For Doulas</span>
         <h2 class="section-hl">Speak freely.<br>MIA does the rest.</h2>
-        <p class="doulas-body">After a visit, open MIA and just talk for about 90 seconds, in your own words. MIA checks what you said against your state&rsquo;s requirements and builds a clean, submission-ready record. It stays in your voice and becomes a lasting record of the care you gave. Starting in Oklahoma, that record is what gets you paid.</p>
+        <p class="doulas-body">After a visit, open MIA and just talk for about 90 seconds, in your own words. MIA checks what you said against your state&rsquo;s requirements and builds a clean, submission-ready record. It stays in your voice and becomes a lasting record of the care you gave. Starting in Oklahoma, it gives your Medicaid plan the documentation it needs to reimburse that visit.</p>
         <div class="doula-quote">
           <div class="doula-quote-text">&ldquo;I love this. The doulas I mentor could really benefit from something like this. Documentation is one of the top challenges we have with them.&rdquo;</div>
           <div class="doula-quote-attr">Jacquelyn Clemmons, Systems Change Advocate, South Carolina</div>
@@ -513,7 +529,7 @@ body.modal-open{overflow:hidden}
       <div>
         <span class="eyebrow">For Payers &amp; MCOs</span>
         <h2 class="section-hl">Outcomes you can trust,<br>from the first visit.</h2>
-        <p class="body-lg" style="margin-bottom:30px">MIA gives Medicaid plans and state agencies clean, checkable records from every community doula visit. The visibility and proof you need to grow doula coverage with confidence.</p>
+        <p class="body-lg" style="margin-bottom:30px">MIA gives Medicaid plans and state agencies clean, verifiable, FHIR-ready records from every community doula visit, plus the anonymized outcomes and network visibility you need to grow doula coverage with confidence.</p>
         <div class="pay-features">
           <div class="pay-card"><div class="pay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><h3>Drops into your system</h3><p>Records arrive in the standard format your health data tools already read, so nothing gets retyped or cleaned up by hand. (FHIR-ready.)</p></div>
           <div class="pay-card"><div class="pay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div><h3>Outcomes you can see</h3><p>Anonymized results across the doula workforce. Visits completed, postpartum follow-through, in a form you can actually use.</p></div>
